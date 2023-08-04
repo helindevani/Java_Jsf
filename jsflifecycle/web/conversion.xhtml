@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>convertag demo</title>
+    </h:head>
+    <h:body>
+        <table border="3px">
+            <tr>
+                <th>Parameter</th>
+                <th>Value Passed</th>
+                <th>output</th>
+            </tr>
+            <tr>
+                <td>minimum fraction digits=2</td>
+                <td>1.1</td>
+                <td>
+                    <h:outputText value="1.1">
+                        <f:convertNumber minFractionDigits="2"/>
+                    </h:outputText>
+                </td>
+            </tr>
+            <tr>
+                <td>maximum fraction digits=2</td>
+                <td>1.123456</td>
+                <td>
+                    <h:outputText value="1.123456">
+                        <f:convertNumber maxFractionDigits="5"/>
+                    </h:outputText>
+                </td>
+            </tr>
+            <tr>
+                <td>minimum Integer digits=2</td>
+                <td>1.1</td>
+                <td>
+                    <h:outputText value="1.1">
+                        <f:convertNumber minIntegerDigits="2"/>
+                    </h:outputText>
+                </td>
+            </tr>
+            <tr>
+                <td>maximum Integer digits=2</td>
+                <td>125.1</td>
+                <td>
+                    <h:outputText value="125.12">
+                        <f:convertNumber maxIntegerDigits="2"/>
+                    </h:outputText>
+                </td>
+            </tr>
+            <tr>
+                <td>Patterns="#000.000"</td>
+                <td>100.12385</td>
+                <td>
+                    <h:outputText value="1000.12385">
+                        <f:convertNumber pattern="#000.000"/>
+                    </h:outputText>
+                </td>
+            </tr>
+            <tr>
+                <td>Currency</td>
+                <td>100</td>
+                <td>
+                    <h:outputText value="$100">
+                        <f:convertNumber currencySymbol="$" type="currency"/>
+                    </h:outputText>
+                </td>
+            </tr>
+        </table>
+    </h:body>
+</html>
+

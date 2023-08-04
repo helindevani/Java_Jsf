@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <h:body>
+        <h:form>
+            <h:outputLabel value="UserName"/>
+            <h:inputText id="uname" value="#{validator.uname}" label="username" validatorMessage="tou enter in right order">
+                <f:validateLength for="uname" minimum="5" maximum="20"/>
+            </h:inputText>
+            <br/>
+            <br/>
+            <h:outputLabel value="Emailid"/>
+            <h:inputText id="emailid" value="#{validator.email}" label="emailid" >
+                <f:validateRegex pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"/>
+            </h:inputText>
+            <br/>
+            <br/>
+            <h:outputLabel value="Amount To Withdraw"/>
+            <h:inputText id="amount" value="#{validator.amount}">
+                <f:validateDoubleRange minimum="100" maximum="10000"/>
+            </h:inputText>
+            <br/>
+            <br/>
+            <h:outputLabel value="Label For Name"/>
+            <h:inputText id="name" value="#{validator.name}" >
+                <f:validateRequired/>
+            </h:inputText>
+            <br/>
+            <br/>
+            <h:commandButton action="response.xhtml" value="submit"/>
+        </h:form>
+    </h:body>
+</html>
+
